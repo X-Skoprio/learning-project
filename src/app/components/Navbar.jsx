@@ -3,6 +3,7 @@
 import {HiMenuAlt3, HiMenuAlt1  } from 'react-icons/hi'
 import ResponsiveMenu from '@/app/components/ResponsiveMenu';
 import { useState } from 'react';
+import Link from 'next/link';
 
 export const MenuLinks = [
     {
@@ -18,7 +19,7 @@ export const MenuLinks = [
     {
         id: 3,
         name: 'test login',
-        link: '#Login'
+        link: '/login'
     },
 ]
 
@@ -44,15 +45,15 @@ export default function Navbar ({toggleLoginPopup, loginPopup})  {
               {
                 MenuLinks.map(({ id, name, link }) => (
                   <li key={id} className='cursor-pointer py-4 hover:-translate-y-1 duration-300'>
-                    <a href="#" 
+                    <Link href={link} 
                     className='text-sm font-medium hover:text-primary py-2 hover:border-b-2 hover:border-primary transition-all duration-300'
                     onClick={() => {
-                      if (link == "#Login")
+                      if (link == "/login")
                       {
                         toggleLoginPopup(true)
                         console.log("clicked")
                         console.log(loginPopup)
-                      } }} >{name}</a>
+                      } }} >{name}</Link>
                   </li>
                 ))
               }
