@@ -54,8 +54,8 @@ module.exports = {
           '100%': { backgroundColor: 'rgba(255, 0, 0, 0.7)' },
         },
         'scale-up-down': {
-          '0%, 100%': { transform: 'scale(1)' },
-          '50%': { transform: 'scale(1.03)' },
+          '0%, 100%': { transform: 'scale(1)', backfaceVisibility: 'hidden' },
+          '50%': { transform: 'scale(1.03)', backfaceVisibility: 'hidden' },
         }
       },
     },

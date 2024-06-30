@@ -5,36 +5,42 @@ import { GiChemicalDrop } from "react-icons/gi";
 import { LiaMicrochipSolid } from "react-icons/lia";
 
 
-const matieres = [
+export const matieres = [
     {
         key :1,
         nom : "Mathématiques",
         icon : <BiMath className='text-5xl mt-3' size={30}/>,
+        link : "/mathematiquesPhysiquesChimie",
     },
     {
         key :2,
         nom : "Physique",
         icon : <FaReact className='text-5xl mt-3 animate-spin' size={30}/>,
+        link : "/mathematiquesPhysiquesChimie",
     },
     {
         key :3,
         nom : "Chimie",
         icon : <GiChemicalDrop className='text-5xl mt-3' size={30}/>,
+        link : "/mathematiquesPhysiquesChimie",
     },
     {
         key :4,
         nom : "Web Design",
         icon : <FaHtml5 className='text-5xl mt-3' size={30}/>,
+        link : "/webDesign",
     },
     {
         key :5,
         nom : "Électronique ",
         icon : <LiaMicrochipSolid className='text-5xl mt-3 animate-left-right' size={30}/>,
+        link : "/electronique",
     },
     {
         key :6,
         nom : "Programmation",
         icon : <BiMath className='text-5xl mt-3' size={30}/>,
+        link : "/programmation",
     },
 
 ]

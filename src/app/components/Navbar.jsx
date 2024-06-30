@@ -14,7 +14,7 @@ export const MenuLinks = [
     {
         id: 2,
         name: "Les cours",
-        link: "/"
+        link: "/lesCours"
     },
     {
         id: 3,

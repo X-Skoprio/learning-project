@@ -105,7 +105,7 @@ export default function SignupPage() {
 
   return (
     <div className="fixed inset-0 grid place-items-center w-svw h-svh bg-white duration-[20]">
-      <div className="flex flex-col justify-center items-center rounded-md shadow-[0_0_70px_rgba(255,255,255,0.5)] p-6 gap-2 bg-white duration-300 w-[90%] md:w-[50%] xl:w-[30%]">
+      <div className="flex flex-col justify-center items-center rounded-md shadow-[0_0_70px_rgba(255,255,255,0.5)] p-6 gap-2 bg-white duration-300 w-[95%] md:w-[50%] xl:w-[25%]">
         <h1 className="text-2xl text-gray-800 font-semibold text-center mb-4">
           {loading ? "Loading..." : "Créer un compte"}
         </h1>
@@ -198,15 +198,15 @@ export default function SignupPage() {
           </ul>
         </div>
 
-        {error && (
-          <div className="text-white px-4 py-1 bg-orange-600  rounded-xl animate-scale-up-down">
-            <span>{error}</span>
+        {error && ( 
+          <div className="text-white px-4 py-1 bg-orange-600  rounded-xl animate-scale-up-down will-change-transform font-semibold">
+         {error}
           </div>
         )}
 
         <div className="flex flex-col items-center space-y-3">
           <button
-            className="btn-primary w-[80%] h-4 rounded-full my-2 p-4 border border-gray-300 duration-300 flex items-center justify-center"
+            className={`btn-primary w-[80%] h-4 rounded-full my-2 p-4 border  duration-300 flex items-center justify-center ${buttonDisabled ? 'bg-gray-800 cursor-not-allowed' : 'bg-primary hover:bg-primary/80'}`}
             onClick={onSignup}
             disabled={buttonDisabled}
           >
