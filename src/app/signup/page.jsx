@@ -21,9 +21,21 @@ export default function SignupPage() {
   const [buttonDisabled, setButtonDisabled] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [passwordValidations, setPasswordValidations] = useState({
+    length: false,
+    specialChar: false,
+    uppercase: false,
+    number: false,
+  });
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const phoneRegex = /^(?:(?:\+|00)33|0)[1-9](?:[\s.-]*\d{2}){4}$/;
+  const passwordRegex = {
+    length: /^.{8,}$/, // At least 8 characters
+    specialChar: /[!@#$%^&*(),.?":{}|<>]/, // At least one special character
+    uppercase: /[A-Z]/, // At least one uppercase letter
+    number: /[0-9]/, // At least one number
+  };
 
   const onSignup = async () => {
     if (!emailRegex.test(user.email)) {
@@ -36,6 +48,15 @@ export default function SignupPage() {
 
     if (!phoneRegex.test(user.phone)) {
       const errorMessage = "Format de numéro de téléphone invalide";
+      setError(errorMessage);
+      toast.error(errorMessage);
+      console.log(errorMessage);
+      return;
+    }
+
+    if (Object.values(passwordValidations).includes(false)) {
+      const errorMessage =
+        "Le mot de passe ne remplit pas les conditions requises";
       setError(errorMessage);
       toast.error(errorMessage);
       console.log(errorMessage);
@@ -65,7 +86,21 @@ export default function SignupPage() {
   };
 
   useEffect(() => {
-    setButtonDisabled(!(user.email && user.password && user.name && user.familyName && user.phone));
+    setButtonDisabled(
+      !(
+        user.email &&
+        user.password &&
+        user.name &&
+        user.familyName &&
+        user.phone
+      )
+    );
+    setPasswordValidations({
+      length: passwordRegex.length.test(user.password),
+      specialChar: passwordRegex.specialChar.test(user.password),
+      uppercase: passwordRegex.uppercase.test(user.password),
+      number: passwordRegex.number.test(user.password),
+    });
   }, [user]);
 
   return (
@@ -139,9 +174,35 @@ export default function SignupPage() {
               placeholder="Mot de passe"
             />
           </label>
+          <ul className="text-sm text-gray-600 ml-4">
+            {!passwordValidations.length && (
+              <li className="text-red-600">
+                Minimum 8 caractères
+              </li>
+            )}
+            {!passwordValidations.specialChar && (
+              <li className="text-red-600">
+                Au moins un caractère spécial
+              </li>
+            )}
+            {!passwordValidations.uppercase && (
+              <li className="text-red-600">
+                Au moins une majuscule
+              </li>
+            )}
+            {!passwordValidations.number && (
+              <li className="text-red-600">
+                Au moins un chiffre
+              </li>
+            )}
+          </ul>
         </div>
 
-        {error && <div className="text-white px-4 py-1 bg-orange-600  rounded-xl animate-scale-up-down"><span>{error}</span></div>}
+        {error && (
+          <div className="text-white px-4 py-1 bg-orange-600  rounded-xl animate-scale-up-down">
+            <span>{error}</span>
+          </div>
+        )}
 
         <div className="flex flex-col items-center space-y-3">
           <button

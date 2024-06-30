@@ -21,11 +21,11 @@ export default function ResponsiveMenu({ showMenu, toggleLoginPopup }) {
         </div>
 
         {/* Menu Section */}
-        <nav className='mt-12 w-[100%] flex justify-center align-center'>
-          <ul className='space-y-4 text-md flex items-center justify-center'>
+        <nav className='mt-12 w-[100%] flex justify-center items-center h-full flex-col'>
+          <ul className='space-y-4 text-md flex items-center justify-center flex-col'>
             {MenuLinks.map(({ id, name, link }) => {
               return (
-                <li key={id} className='cursor-pointer py-4'>
+                <li key={id} className='cursor-pointer py-4 flex items-center justify-center flex-col'>
                   <a href={link} className='mb-5 inline-block hover:text-primary hover:-translate-y-1 duration-300'
                     onClick={() => {
                       if (link === '#Login') {
