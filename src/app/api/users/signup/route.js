@@ -10,9 +10,9 @@ export async function POST(req) {
 
   try {
     const reqBody = await req.json();
-    const { username, email, password } = reqBody;
+    const { name, familyName, phone, email, password } = reqBody;
 
-    if (!username || !email || !password) {
+    if (!name || !familyName || !phone || !email || !password) {
       console.error("Missing required fields");
       return NextResponse.json(
         { error: "Missing required fields" },
@@ -41,7 +41,9 @@ export async function POST(req) {
 
     // Create new user
     const newUser = new User({
-      username,
+      name,
+      familyName,
+      phone,
       email,
       password: hashedPassword,
       verifyToken,

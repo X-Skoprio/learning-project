@@ -5,25 +5,52 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { FaFacebookF } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
+import { FaLinkedin } from "react-icons/fa6";
 
 export default function SignupPage() {
   const router = useRouter();
   const [user, setUser] = useState({
     email: "",
     password: "",
-    username: "",
+    name: "",
+    familyName: "",
+    phone: "",
   });
   const [buttonDisabled, setButtonDisabled] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const phoneRegex = /^(?:(?:\+|00)33|0)[1-9](?:[\s.-]*\d{2}){4}$/;
 
   const onSignup = async () => {
+    if (!emailRegex.test(user.email)) {
+      const errorMessage = "email invalide";
+      setError(errorMessage);
+      toast.error(errorMessage);
+      console.log(errorMessage);
+      return;
+    }
+
+    if (!phoneRegex.test(user.phone)) {
+      const errorMessage = "Format de numéro invalide";
+      setError(errorMessage);
+      toast.error(errorMessage);
+      console.log(errorMessage);
+      return;
+    }
+
     try {
       setLoading(true);
+      setError("");
       const response = await axios.post("/api/users/signup", user);
       console.log(response);
       router.push("/login");
     } catch (error) {
       console.log("Error on signup: ", error.message);
+      setError(error.message);
       toast.error(error.message);
     } finally {
       setLoading(false);
@@ -31,46 +58,107 @@ export default function SignupPage() {
   };
 
   useEffect(() => {
-    setButtonDisabled(!(user.email && user.password && user.username));
+    setButtonDisabled(!(user.email && user.password && user.name && user.familyName && user.phone));
   }, [user]);
 
   return (
-    <div className="grid place-items-center w-svw h-svh bg-black">
-      <div className="flex flex-col justify-center items-center rounded-md shadow-[0_0_70px_rgba(255,255,255,0.5)] p-6 gap-4 bg-white">
-        <h1 className="text-black">{loading ? "Loading..." : "Sign Up"}</h1>
+    <div className="fixed inset-0 grid place-items-center w-svw h-svh bg-white duration-300">
+      <div className="flex flex-col justify-center items-center rounded-md shadow-[0_0_70px_rgba(255,255,255,0.5)] p-6 gap-2 bg-white duration-300">
+        <h1 className="text-2xl text-gray-800 font-semibold text-center mb-4">
+          {loading ? "Loading..." : "Créer un compte"}
+        </h1>
         <hr />
-        <input
-          className="p-4 border border-gray-300"
-          id="username"
-          type="text"
-          value={user.username}
-          onChange={(e) => setUser({ ...user, username: e.target.value })}
-          placeholder="Username"
-        />
-        <input
-          className="p-4 border border-gray-300"
-          id="email"
-          type="text"
-          value={user.email}
-          onChange={(e) => setUser({ ...user, email: e.target.value })}
-          placeholder="Email"
-        />
-        <input
-          className="p-4 border border-gray-300"
-          id="password"
-          type="password"
-          value={user.password}
-          onChange={(e) => setUser({ ...user, password: e.target.value })}
-          placeholder="Password"
-        />
-        <button
-          className="p-4 border border-gray-300"
-          onClick={onSignup}
-          disabled={buttonDisabled}
-        >
-          {buttonDisabled ? "Button Disabled" : "Sign Up"}
-        </button>
-        <Link href="/login">Visit Login page</Link>
+        <div className="w-full duration-300">
+          <label className="input-label duration-300">
+            Nom :
+            <input
+              className="my-1 border border-gray-300 input duration-300"
+              id="name"
+              type="text"
+              value={user.name}
+              onChange={(e) => setUser({ ...user, name: e.target.value })}
+              placeholder="Nom"
+            />
+          </label>
+        </div>
+        <div className="w-full duration-300">
+          <label className="input-label duration-300">
+            Prénom :
+            <input
+              className="my-1 border border-gray-300 input duration-300"
+              id="familyName"
+              type="text"
+              value={user.familyName}
+              onChange={(e) => setUser({ ...user, familyName: e.target.value })}
+              placeholder="Prénom"
+            />
+          </label>
+        </div>
+        <div className="w-full duration-300">
+          <label className="input-label duration-300">
+            Numéro de téléphone :
+            <input
+              className="my-1 border border-gray-300 input duration-300"
+              id="phone"
+              type="text"
+              value={user.phone}
+              onChange={(e) => setUser({ ...user, phone: e.target.value })}
+              placeholder="Numéro de téléphone"
+            />
+          </label>
+        </div>
+        <div className="w-full duration-300">
+          <label className="input-label duration-300">
+            Email :
+            <input
+              className="my-1 border border-gray-300 input duration-300"
+              id="email"
+              type="text"
+              value={user.email}
+              onChange={(e) => setUser({ ...user, email: e.target.value })}
+              placeholder="Email"
+            />
+          </label>
+        </div>
+        <div className="w-full duration-300">
+          <label className="input-label duration-300">
+            Mot de passe :
+            <input
+              className="my-1 border border-gray-300 input duration-300"
+              id="password"
+              type="password"
+              value={user.password}
+              onChange={(e) => setUser({ ...user, password: e.target.value })}
+              placeholder="Mot de passe"
+            />
+          </label>
+        </div>
+
+        {error && <div className="text-red-500">{error}</div>}
+
+        <div className="flex flex-col items-center space-y-3">
+          <button
+            className="btn-primary w-[80%] h-4 rounded-full my-2 p-4 border border-gray-300 duration-300 flex items-center justify-center"
+            onClick={onSignup}
+            disabled={buttonDisabled}
+          >
+            {buttonDisabled ? "Button Disabled" : "Sign Up"}
+          </button>
+          <p>Se connecter avec :</p>
+          <div className="flex space-x-3 text-2xl">
+            <FcGoogle className="duration-300 hover:-translate-y-1 cursor-pointer grayscale hover:grayscale-0"></FcGoogle>
+            <FaLinkedin className="duration-300 hover:-translate-y-1 cursor-pointer grayscale hover:grayscale-0 text-blue-600"></FaLinkedin>
+            <FaFacebookF className="duration-300 hover:-translate-y-1 cursor-pointer grayscale hover:grayscale-0 text-blue-800"></FaFacebookF>
+          </div>
+          <p>
+            Vous avez déjà un compte ?{" "}
+            <Link href="/login">
+              <span className="text-primary cursor-pointer duration-300 inline-block hover:-translate-y-1">
+                Se connecter
+              </span>
+            </Link>
+          </p>
+        </div>
       </div>
     </div>
   );
