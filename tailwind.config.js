@@ -33,6 +33,8 @@ module.exports = {
       animation: {
         spin: 'spin 5s linear infinite',
         'left-right': 'leftRight 2s linear infinite',
+        'bg-opacity': 'bg-opacity 1s infinite',
+        'scale-up-down': 'scale-up-down 2s infinite',
       },
       keyframes: {
         spin: {
@@ -46,6 +48,15 @@ module.exports = {
           '75%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-5px)' },
         },
+        'bg-opacity': {
+          '0%': { backgroundColor: 'rgba(255, 0, 0, 0.7)' },
+          '50%': { backgroundColor: 'rgba(255, 0, 0, 1)' },
+          '100%': { backgroundColor: 'rgba(255, 0, 0, 0.7)' },
+        },
+        'scale-up-down': {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.03)' },
+        }
       },
     },
   },

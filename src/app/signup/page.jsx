@@ -27,7 +27,7 @@ export default function SignupPage() {
 
   const onSignup = async () => {
     if (!emailRegex.test(user.email)) {
-      const errorMessage = "email invalide";
+      const errorMessage = "Email invalide";
       setError(errorMessage);
       toast.error(errorMessage);
       console.log(errorMessage);
@@ -35,7 +35,7 @@ export default function SignupPage() {
     }
 
     if (!phoneRegex.test(user.phone)) {
-      const errorMessage = "Format de numéro invalide";
+      const errorMessage = "Format de numéro de téléphone invalide";
       setError(errorMessage);
       toast.error(errorMessage);
       console.log(errorMessage);
@@ -50,8 +50,15 @@ export default function SignupPage() {
       router.push("/login");
     } catch (error) {
       console.log("Error on signup: ", error.message);
-      setError(error.message);
-      toast.error(error.message);
+      if (error.response && error.response.status === 409) {
+        const errorMessage = "Utilisateur déjà existant";
+        setError(errorMessage);
+        toast.error(errorMessage);
+      } else {
+        const errorMessage = error.message;
+        setError(errorMessage);
+        toast.error(errorMessage);
+      }
     } finally {
       setLoading(false);
     }
@@ -62,8 +69,8 @@ export default function SignupPage() {
   }, [user]);
 
   return (
-    <div className="fixed inset-0 grid place-items-center w-svw h-svh bg-white duration-300">
-      <div className="flex flex-col justify-center items-center rounded-md shadow-[0_0_70px_rgba(255,255,255,0.5)] p-6 gap-2 bg-white duration-300">
+    <div className="fixed inset-0 grid place-items-center w-svw h-svh bg-white duration-[20]">
+      <div className="flex flex-col justify-center items-center rounded-md shadow-[0_0_70px_rgba(255,255,255,0.5)] p-6 gap-2 bg-white duration-300 w-[90%] md:w-[50%] xl:w-[30%]">
         <h1 className="text-2xl text-gray-800 font-semibold text-center mb-4">
           {loading ? "Loading..." : "Créer un compte"}
         </h1>
@@ -134,7 +141,7 @@ export default function SignupPage() {
           </label>
         </div>
 
-        {error && <div className="text-red-500">{error}</div>}
+        {error && <div className="text-white px-4 py-1 bg-orange-600  rounded-xl animate-scale-up-down"><span>{error}</span></div>}
 
         <div className="flex flex-col items-center space-y-3">
           <button
