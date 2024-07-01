@@ -19,6 +19,11 @@
     {
         @apply border border-gray-300 w-full rounded-full py-[3px] outline-none px-4 focus:ring-1 focus:ring-inset focus:ring-blue-200 ;
     }
+    .parallelogram {
+      @apply w-48 h-24 bg-primary;
+      transform: skew(30deg);
+    }
+    
     html {
         scrollbar-width: 4px; /* "auto" hides scrollbar when inactive, "thin" keeps it always visible */
 

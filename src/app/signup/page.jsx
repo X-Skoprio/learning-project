@@ -101,7 +101,7 @@ export default function SignupPage() {
       uppercase: passwordRegex.uppercase.test(user.password),
       number: passwordRegex.number.test(user.password),
     });
-  }, [user]);
+  }, [user,passwordRegex.number,passwordRegex.length,passwordRegex.specialChar,passwordRegex.uppercase,user.password]);
 
   return (
     <div className="fixed inset-0 grid place-items-center w-svw h-svh bg-white duration-[20]">

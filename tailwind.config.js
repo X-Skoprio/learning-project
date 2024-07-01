@@ -9,6 +9,13 @@ module.exports = {
   ],
   theme: {
     extend: {
+      spacing: {
+        '0': '0px',
+        '100': '100px',
+      },
+      borderWidth: {
+        '100': '100px',
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

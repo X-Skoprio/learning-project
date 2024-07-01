@@ -8,7 +8,7 @@ export default function NotFound() {
          Page Not Found
       </h1>
     <Link href="/">
-    <button className="btn-primary mt-10 md:mt-20">Retourner à la page d'Accueil</button>
+    <button className="btn-primary mt-10 md:mt-20">Retourner à la page d&apos;Accueil</button>
     </Link>
       
     </div>
