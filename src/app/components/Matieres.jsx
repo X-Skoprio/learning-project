@@ -5,7 +5,7 @@ import { GiChemicalDrop } from "react-icons/gi";
 import { LiaMicrochipSolid } from "react-icons/lia";
 
 
-export const matieres = [
+const matieres = [
     {
         key :1,
         nom : "Mathématiques",
@@ -41,6 +41,11 @@ export const matieres = [
         nom : "Programmation",
         icon : <BiMath className='text-5xl mt-3' size={30}/>,
         link : "/programmation",
+
+        key :7,
+        nom : "Intelligence Artificielle",
+        icon : <BiMath className='text-5xl mt-3' size={30}/>,
+        link : "/ia",
     },
 
 ]

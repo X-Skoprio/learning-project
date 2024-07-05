@@ -3,10 +3,10 @@ import { NextResponse } from "next/server";
 // This function can be marked `async` if using `await` inside
 export function middleware(request) {
   const path = request.nextUrl.pathname;
-  const isPublic = path === "/login" || path === "/signup";
+  const isPublic = path === "/login" || path === "/signup" || path === "/";
   const token = request.cookies.get("token")?.value;
 
-  if (isPublic && token) {
+  if ((path === "/login" || path === "/signup") && token) {
     return NextResponse.redirect(new URL("/", request.nextUrl));
   }
 
