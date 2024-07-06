@@ -3,13 +3,14 @@ import { LuClipboardList } from "react-icons/lu";
 import { IoGiftOutline } from "react-icons/io5";
 import { FaJava } from "react-icons/fa";
 import { FaPython } from "react-icons/fa";
+import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 
 export const programmationLine = [
   {
     id: 1,
-    title: "Accueil",
-    content: "",
-    icon: <></>,
+    title: "Projets Guidés",
+    content: "Ajouter des projets à votre CV !",
+    icon: <><AiOutlineFundProjectionScreen /></>,
   },
   {
     id: 2,
@@ -44,44 +45,51 @@ export const programmationLine = [
 ];
 export default function Programmation() {
   return (
-    <div className="w-full h-full relative ">
-      <div className="grid grid-cols-2 grid-flow-col px-36">
-        <div className="bg-white w-full space-y-6 min-h-[400px] flex items-start justify-center flex-col">
-          <h1 className="text-5xl font-bold ">
+    <div className="w-full h-full flex items-center justify-center flex-col duration-300 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 md:grid-flow-col w-full px-8 md:px-32 xl:px-48 duration-300">
+        <div className="bg-white w-full space-y-6  flex items-start justify-center flex-col duration-300">
+          <h1 className="text-5xl font-bold z-50 ">
             La <span className="text-primary">Programmation</span>
           </h1>
           <h2 className="text-lg">
-            Les cours peuvent être dispensés en <span className="underline">Anglais</span> ou en <span className="underline">Français</span>.
+            Les cours peuvent être dispensés en{" "}
+            <span className="underline">Anglais</span> ou en{" "}
+            <span className="underline">Français</span>.
           </h2>
           <h3>
-            Apprenez : <span className="font-bold text-primary">Java</span>, <span className="font-bold text-primary">C</span>, <span className="font-bold text-primary">Python</span>, <span className="font-bold text-primary">Python</span>
+            Apprenez : 
+            <span className="font-bold text-primary">Java</span>,{" "}
+            <span className="font-bold text-primary">C</span>,{" "}
+            <span className="font-bold text-primary">Python</span>,{" "}
+            <span className="font-bold text-primary"></span>
           </h3>
           <button className="btn-primary">Découvrer les formules</button>
         </div>
-        <div className="bg-white w-full space-y-4 min-h-[440px] flex items-start justify-center">
-            <div className="text-5xl space-x-10 flex justify-center items-center">
+        <div className="bg-white w-full h-full space-y-4 flex items-start justify-center flex-col p-8 duration-300">
+          <div className="text-5xl space-x-10 flex justify-center items-center duration-300">
             <FaJava></FaJava>
             <FaPython></FaPython>
-            </div>
-            
+          </div>
         </div>
       </div>
 
       {/* Section interDiv */}
-      <div className="hidden absolute left-1/2 transform -translate-x-1/2 bg-gray-200 w-[80%] h-36 md:grid grid-flow-col grid-cols-2 md:grid-cols-4 rounded-md border-2 border-gray-300 shadow-[0_0_20px_rgba(0,0,0,0.3)]">
+      <div className=" m-10 py-2 px-16 md:p-6 bg-gray-200 md:w-[80%] w-[85%] h-full grid md:grid-flow-col grid-cols-1 md:grid-cols-4 rounded-md border-2 border-gray-300 shadow-[0_0_20px_rgba(0,0,0,0.2)] duration-300">
         {programmationLine.map((programmationLine) => {
           return (
-            <div key={programmationLine.id}>
-              <div className="flex justify-center items-center h-full border-gray-600">
+            <div key={programmationLine.id} className="gap-4">
+              <div className="flex justify-center items-center h-full md:border-gray-600  md:my-0  py-4 duration-300">
                 <div
-                  className={`flex justify-center items-center flex-col h-[50%] ${
+                  className={`flex justify-center items-center flex-col md:h-[50%] ${
                     programmationLine.id === 1
                       ? ""
-                      : "border-l-[1px] border-gray-500"
+                      : "md:border-l-[1px] md:border-t-0 md:border-gray-500 border-t-[1px] border-gray-500"
                   } w-full`}
                 >
-                  <div className="text-2xl pb-2">{programmationLine.icon}</div>
-                  <div className="font-semibold flex items-center justify-center">
+                  <div className="text-2xl pt-6 md:pt-0  md:block duration-300">
+                    {programmationLine.icon}
+                  </div>
+                  <div className="font-semibold flex items-center justify-center duration-300">
                     {programmationLine.title}
                   </div>
                   <div>{programmationLine.content}</div>
@@ -91,7 +99,10 @@ export default function Programmation() {
           );
         })}
       </div>
-    
+      {/* Third Section */}
+      <div className="duration-300 ">
+        <h2></h2>
+      </div>
     </div>
   );
 }

@@ -101,7 +101,14 @@ export default function SignupPage() {
       uppercase: passwordRegex.uppercase.test(user.password),
       number: passwordRegex.number.test(user.password),
     });
-  }, [user,passwordRegex.number,passwordRegex.length,passwordRegex.specialChar,passwordRegex.uppercase,user.password]);
+  }, [
+    user,
+    passwordRegex.number,
+    passwordRegex.length,
+    passwordRegex.specialChar,
+    passwordRegex.uppercase,
+    user.password,
+  ]);
 
   return (
     <div className="fixed inset-0 grid place-items-center w-svw h-svh bg-white duration-[20]">
@@ -176,37 +183,33 @@ export default function SignupPage() {
           </label>
           <ul className="text-sm text-gray-600 ml-4">
             {!passwordValidations.length && (
-              <li className="text-red-600">
-                Minimum 8 caractères
-              </li>
+              <li className="text-red-600">Minimum 8 caractères</li>
             )}
             {!passwordValidations.specialChar && (
-              <li className="text-red-600">
-                Au moins un caractère spécial
-              </li>
+              <li className="text-red-600">Au moins un caractère spécial</li>
             )}
             {!passwordValidations.uppercase && (
-              <li className="text-red-600">
-                Au moins une majuscule
-              </li>
+              <li className="text-red-600">Au moins une majuscule</li>
             )}
             {!passwordValidations.number && (
-              <li className="text-red-600">
-                Au moins un chiffre
-              </li>
+              <li className="text-red-600">Au moins un chiffre</li>
             )}
           </ul>
         </div>
 
-        {error && ( 
+        {error && (
           <div className="text-white px-4 py-1 bg-orange-600  rounded-xl animate-scale-up-down will-change-transform font-semibold">
-         {error}
+            {error}
           </div>
         )}
 
         <div className="flex flex-col items-center space-y-3">
           <button
-            className={`btn-primary w-[80%] h-4 rounded-full my-2 p-4 border  duration-300 flex items-center justify-center ${buttonDisabled ? 'bg-gray-800 cursor-not-allowed' : 'bg-primary hover:bg-primary/80'}`}
+            className={`btn-primary w-[80%] h-4 rounded-full my-2 p-4 border  duration-300 flex items-center justify-center ${
+              buttonDisabled
+                ? "bg-gray-800 cursor-not-allowed"
+                : "bg-primary hover:bg-primary/80"
+            }`}
             onClick={onSignup}
             disabled={buttonDisabled}
           >
@@ -219,10 +222,10 @@ export default function SignupPage() {
             <FaFacebookF className="duration-300 hover:-translate-y-1 cursor-pointer grayscale hover:grayscale-0 text-blue-800"></FaFacebookF>
           </div>
           <p>
-            Vous avez déjà un compte ?{" "}
+            Vous avez déjà un compte ? {" "}
             <Link href="/login">
               <span className="text-primary cursor-pointer duration-300 inline-block hover:-translate-y-1">
-                Se connecter
+                 Se connecter
               </span>
             </Link>
           </p>
