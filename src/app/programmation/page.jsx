@@ -24,7 +24,7 @@ export const programmationLine = [
   },
   {
     id: 3,
-    title: "Differentes formules",
+    title: "Cours personnalisés",
     content: "Pour tout les niveaux !",
     icon: (
       <>
@@ -101,7 +101,7 @@ export default function Programmation() {
       </div>
       {/* Third Section */}
       <div className="duration-300 ">
-        <h2></h2>
+        <h2>UNe section comment ca se passe : "prise de rendez vous, personnalisation, des cas exemple" , section contenu, section projets,  </h2>
       </div>
     </div>
   );

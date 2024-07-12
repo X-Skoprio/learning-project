@@ -17,7 +17,7 @@ const skillData = [
     icon: <TfiBlackboard className='text-4xl text-primary'/>,
     link: "#",
     description: 
-    "Nous offrons des cours en ligne de mathématiques, physique et sciences de l&apos;ingénieur pour les niveaux collège et lycée. Nos sessions interactives en direct, encadrées par des professionnels qualifiés, garantissent un apprentissage interactif et personnalisé.",
+    "Nous offrons des cours en ligne de mathématiques, physique et sciences de l'ingénieur pour les niveaux collège et lycée. Nos sessions interactives en direct, encadrées par des professionnels qualifiés, garantissent un apprentissage interactif et personnalisé.",
     aosDelay: "0"
   },
   {
@@ -25,15 +25,15 @@ const skillData = [
     icon: <TbReportAnalytics className='text-4xl text-primary'/>,
     link: "#",
     description: 
-    "Nous offrons des cours en ligne d&apos;électronique, mettant l&apos;accent sur les microcontrôleurs comme Arduino. Nos sessions interactives en direct, animées par des experts qualifiés, vous permettent d&apos;explorer théorie et pratique dans ce domaine.",
+    "Nous offrons des cours en ligne d'électronique, mettant l'accent sur les microcontrôleurs comme Arduino. Nos sessions interactives en direct, animées par des experts qualifiés, vous permettent d'explorer théorie et pratique dans ce domaine.",
     aosDelay: "0"
   },
   {
-    name: "Un compte : facture, crédit d&apos;impôt, on gère tout !",
+    name: "Un compte : facture, crédit d'impôt, on gère tout !",
     icon: <RiAccountBoxLine className='text-4xl text-primary'/>,
     link: "#",
     description: 
-    "Nous offrons des cours en ligne d&apos;électronique, mettant l&apos;accent sur les microcontrôleurs comme Arduino. Nos sessions interactives en direct, animées par des experts qualifiés, vous permettent d&apos;explorer théorie et pratique dans ce domaine.",
+    "Nous offrons des cours en ligne d'électronique, mettant l'accent sur les microcontrôleurs comme Arduino. Nos sessions interactives en direct, animées par des experts qualifiés, vous permettent d'explorer théorie et pratique dans ce domaine.",
     aosDelay: "0"
   },
 ];

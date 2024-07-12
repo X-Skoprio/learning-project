@@ -31,7 +31,7 @@ export default function LoginPage() {
 
       if (response.data.success) {
         toast.success("Login successful!");
-        router.push("/"); // Redirect to the desired page after successful login
+        router.push("/"); 
       } else {
         toast.error(response.data.error);
       }
