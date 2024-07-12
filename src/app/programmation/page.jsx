@@ -4,13 +4,18 @@ import { IoGiftOutline } from "react-icons/io5";
 import { FaJava } from "react-icons/fa";
 import { FaPython } from "react-icons/fa";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
+import HowItWorks from "../components/HowItWorks";
 
 export const programmationLine = [
   {
     id: 1,
     title: "Projets Guidés",
     content: "Ajouter des projets à votre CV !",
-    icon: <><AiOutlineFundProjectionScreen /></>,
+    icon: (
+      <>
+        <AiOutlineFundProjectionScreen />
+      </>
+    ),
   },
   {
     id: 2,
@@ -43,6 +48,69 @@ export const programmationLine = [
     ),
   },
 ];
+
+const steps = [
+
+  {
+    id: 1,
+    title: "Prise de contacte",
+    content: (
+      <>
+        <li>
+          Discussion avec l'élève afin de comprendre son besoin et de lui
+          conseiller le langage à apprendre.
+        </li>
+        <li>Programmation de la première sèance de cours offerte.</li>
+
+      </>
+    ),
+  },
+  {
+    id: 2,
+    title: "Personnalisation du parcours",
+    content: (
+      <>
+        <li>
+          Chaque cours sera personnalisé en fonction du niveau des connaissances
+          et des besoins de chaque élève
+        </li>
+
+      </>
+    ),
+  },
+  {
+    id: 3,
+    title: "Le Parcours",
+    content: (
+      <>
+        <li>
+          Des <span className="text-primary font-semibold">devoirs</span> entre
+          chaque séance de cours.
+        </li>
+        <li>
+          Des <span className="text-primary font-semibold">projets</span>{" "}
+          complets et valorisant à mettre sur le CV.
+        </li>
+      </>
+    ),
+  },
+  {
+    id: 4,
+    title: "Le Parcours",
+    content: (
+      <>
+        <li>
+          Des <span className="text-primary font-semibold">devoirs</span> entre
+          chaque séance de cours.
+        </li>
+        <li>
+          Des <span className="text-primary font-semibold">projets</span>{" "}
+          complets et valorisant à mettre sur le CV.
+        </li>
+      </>
+    ),
+  },
+];
 export default function Programmation() {
   return (
     <div className="w-full h-full flex items-center justify-center flex-col duration-300 ">
@@ -57,8 +125,7 @@ export default function Programmation() {
             <span className="underline">Français</span>.
           </h2>
           <h3>
-            Apprenez : 
-            <span className="font-bold text-primary">Java</span>,{" "}
+            Apprenez :<span className="font-bold text-primary">Java</span>,{" "}
             <span className="font-bold text-primary">C</span>,{" "}
             <span className="font-bold text-primary">Python</span>,{" "}
             <span className="font-bold text-primary"></span>
@@ -101,8 +168,12 @@ export default function Programmation() {
       </div>
       {/* Third Section */}
       <div className="duration-300 ">
-        <h2>UNe section comment ca se passe : "prise de rendez vous, personnalisation, des cas exemple" , section contenu, section projets,  </h2>
+        <h2>
+          UNe section comment ca se passe : "prise de rendez vous,
+          personnalisation, des cas exemple" , section contenu, section projets,{" "}
+        </h2>
       </div>
+      <HowItWorks steps={steps}></HowItWorks>
     </div>
   );
 }
