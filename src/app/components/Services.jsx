@@ -45,7 +45,7 @@ export default function Services() {
         {/* header section */}
         <div className='pb-12 text-center space-y-3'>
           <h2 data-aos="fade-up" className='text text-3xl font-semibold text-primary'>Nos services</h2>
-          <p data-aos="fade-up" data-aos-delay="300"><span className='subHighlight'>&quot;</span> Des <span className='subHighlight'>cours sur mesure</span> pour votre enfant, adaptés à ses <span className='subHighlight'>besoins uniques </span><span className='subHighlight'>&quot;</span></p>
+          <p data-aos="fade-up" data-aos-delay="300"><span className='subHighlight text-slate-600'>&quot;</span> Des <span className='subHighlight'>cours sur mesure</span> pour votre enfant, adaptés à ses <span className='subHighlight'>besoins uniques </span><span className='subHighlight'>&quot;</span></p>
         </div>
         {/* card section */}
         <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4'>

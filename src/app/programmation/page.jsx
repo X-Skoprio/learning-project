@@ -5,6 +5,7 @@ import { FaJava } from "react-icons/fa";
 import { FaPython } from "react-icons/fa";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 import HowItWorks from "../components/HowItWorks";
+import Link from "next/link";
 
 export const programmationLine = [
   {
@@ -50,18 +51,13 @@ export const programmationLine = [
 ];
 
 const steps = [
-
   {
     id: 1,
     title: "Prise de contacte",
     content: (
       <>
-        <li>
-          Discussion avec l'élève afin de comprendre son besoin et de lui
-          conseiller le langage à apprendre.
-        </li>
+        <li>Inscrivez vous à l'aide du formulaire de contact ou en cliquant <Link href="/contact" className="text-primary hover:-translate-x-2 cursor-pointer">ici</Link>.</li>
         <li>Programmation de la première sèance de cours offerte.</li>
-
       </>
     ),
   },
@@ -71,21 +67,23 @@ const steps = [
     content: (
       <>
         <li>
-          Chaque cours sera personnalisé en fonction du niveau des connaissances
-          et des besoins de chaque élève
+          Discussion avec l'élève afin de comprendre son besoin et de lui
+          conseiller le langage à apprendre.
         </li>
-
+        <li>
+          Personnalisation des cours en interne par les professeurs.
+        </li>
       </>
     ),
   },
   {
     id: 3,
-    title: "Le Parcours",
+    title: "Déroulement des cours",
     content: (
       <>
         <li>
           Des <span className="text-primary font-semibold">devoirs</span> entre
-          chaque séance de cours.
+          chaque séance de cours, afin de renforcer les notions vus.
         </li>
         <li>
           Des <span className="text-primary font-semibold">projets</span>{" "}
@@ -167,12 +165,6 @@ export default function Programmation() {
         })}
       </div>
       {/* Third Section */}
-      <div className="duration-300 ">
-        <h2>
-          UNe section comment ca se passe : "prise de rendez vous,
-          personnalisation, des cas exemple" , section contenu, section projets,{" "}
-        </h2>
-      </div>
       <HowItWorks steps={steps}></HowItWorks>
     </div>
   );
