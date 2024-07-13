@@ -54,7 +54,7 @@ export const programmationLine = [
 const steps = [
   {
     id: 1,
-    title: "Prise de contacte",
+    title: "Prise de contact",
     content: (
       <>
         <li>
