@@ -5,7 +5,7 @@ const HowItWorks = (props) => {
   return (
     <div className="w-full h-full flex flex-col items-center justify-center my-4 duration-300 bg-slate-50">
       <h2 data-aos="fade-up" className='text text-4xl font-bold text-primary  mt-10'>Comment ça marche ? </h2>
-      <p className="mt-1 mb-8 "><span className="font-bold">"</span> On vous explique tout ! <span className="font-bold">"</span></p>
+      <p className="mt-1 mb-8 "><span className="font-bold">&quot;</span> On vous explique tout ! <span className="font-bold">&quot;</span></p>
       <div className="grid grid-cols-1 md:grid-cols-4 md:gap-10 mb-12 px-10 md:px-48">
         {steps.map((step) => (
           <div className="w-full  flex flex-col items-center justify-between py-6 md:py-12" key={step.id}>

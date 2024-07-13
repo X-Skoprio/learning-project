@@ -22,7 +22,7 @@ export const programmationLine = [
   {
     id: 2,
     title: "Initiation Gratuite",
-    content: "Une séance d'initation offerte !",
+    content: "Une séance d&apos;initation offerte !",
     icon: (
       <>
         <IoGiftOutline></IoGiftOutline>
@@ -42,7 +42,7 @@ export const programmationLine = [
   {
     id: 4,
     title: "Horaires flexibles",
-    content: "On s'adapte à vous !",
+    content: "On s&apos;adapte à vous !",
     icon: (
       <>
         <LuAlarmClock></LuAlarmClock>
