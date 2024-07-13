@@ -33,7 +33,7 @@ export default function Navbar ({toggleLoginPopup, loginPopup})  {
   };
 
   return (
-    <nav className="bg-white  duration-300 px-4 sm:px-0 items-center z-50">
+    <nav className="bg-transparent duration-300 px-4 sm:px-0 items-center z-90">
       <div className="container py-3 md:py-2 sm:px-0">
         <div className="flex justify-between items-center">
           <div className="">
@@ -57,7 +57,7 @@ export default function Navbar ({toggleLoginPopup, loginPopup})  {
                   </li>
                 ))
               }
-              <button className="btn-primary text-sm">Contactez-nous</button>
+             <Link href="/contactForm"> <button className="btn-primary text-sm">Contactez-nous</button></Link>
        
             </ul>
           </div>
