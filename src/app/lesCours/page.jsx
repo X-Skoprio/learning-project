@@ -72,7 +72,7 @@ export default function LesCours() {
             <Link    key={matiere.key} className="w-full h-full" href={matiere.link}>
               <div
               
-                className="w-full shadow-md bg-slate-300 rounded-md hover:scale-[1.01] cursor-pointer h-40 duration-300 hover:bg-primary/90 p-6 relative grid grid-cols-2"
+                className="w-full shadow-md bg-slate-300 rounded-md hover:scale-[1.01] cursor-pointer h-48 duration-300 hover:bg-primary/90 p-6 relative grid grid-cols-2"
               >
                 <div className="w-full h-full flex items-center justify-start relative">
                   <h3 className="text-2xl w-full h-full absolute top-0 left-0">
@@ -98,7 +98,7 @@ export default function LesCours() {
             <Link  key={matiere.key} className="w-full h-full" href={matiere.link}>
               <div
                
-                className="w-full bg-slate-400 shadow-md rounded-md hover:scale-[1.01] cursor-pointer h-40 duration-300 hover:bg-primary/90 p-6 relative grid grid-cols-2"
+                className="w-full bg-slate-400 shadow-md rounded-md hover:scale-[1.01] cursor-pointer h-48 duration-300 hover:bg-primary/90 p-6 relative grid grid-cols-2"
               >
                 <div className="w-full h-full flex items-center justify-start ">
                   <h3 className="text-2xl w-full h-full flex items-center justify-center">
@@ -124,7 +124,7 @@ export default function LesCours() {
             <Link  key={matiere.key} className="w-full h-full" href={matiere.link}>
               <div
               
-                className="w-full shadow-md bg-slate-300 rounded-md hover:scale-[1.01] cursor-pointer h-40 duration-300 hover:bg-primary/90 p-6 relative grid grid-cols-2"
+                className="w-full shadow-md bg-slate-300 rounded-md hover:scale-[1.01] cursor-pointer h-48 duration-300 hover:bg-primary/90 p-6 relative grid grid-cols-2"
               >
                 <div className="w-full h-full flex items-center justify-start">
                   <h3 className="text-6xl w-full h-full flex items-center justify-center">

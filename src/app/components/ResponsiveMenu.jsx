@@ -19,7 +19,6 @@ export default function ResponsiveMenu({ showMenu, toggleLoginPopup }) {
             <h2 className='text-sm text-slate-500'>Bla bla en plus</h2>
           </div>
         </div>
-
         {/* Menu Section */}
         <nav className='mt-12 w-[100%] flex justify-center items-center h-full flex-col'>
           <ul className='space-y-4 text-md flex items-center justify-center flex-col'>
@@ -33,7 +32,6 @@ export default function ResponsiveMenu({ showMenu, toggleLoginPopup }) {
                         console.log("clicked")
                       }
                     }}> {name}</a>
-
                 </li>
               )
             })}
