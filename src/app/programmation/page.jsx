@@ -22,7 +22,7 @@ export const programmationLine = [
   {
     id: 2,
     title: "Initiation Gratuite",
-    content: "Une séance d&apos;initation offerte !",
+    content: "Une séance d'initation offerte !",
     icon: (
       <>
         <IoGiftOutline></IoGiftOutline>
@@ -42,7 +42,7 @@ export const programmationLine = [
   {
     id: 4,
     title: "Horaires flexibles",
-    content: "On s&apos;adapte à vous !",
+    content: "On s'adapte à vous !",
     icon: (
       <>
         <LuAlarmClock></LuAlarmClock>
@@ -58,7 +58,7 @@ const steps = [
     content: (
       <>
         <li>
-          Inscrivez vous à l'aide du formulaire de contact ou en cliquant{" "}
+          Inscrivez vous à l&apos;aide du formulaire de contact ou en cliquant{" "}
           <Link
             href="/contact"
             className="text-primary hover:-translate-x-2 cursor-pointer"
@@ -77,7 +77,7 @@ const steps = [
     content: (
       <>
         <li>
-          Discussion avec l'élève afin de comprendre son besoin et de lui
+          Discussion avec l&apos;élève afin de comprendre son besoin et de lui
           conseiller le langage à apprendre.
         </li>
         <li>Personnalisation des cours en interne par les professeurs.</li>
