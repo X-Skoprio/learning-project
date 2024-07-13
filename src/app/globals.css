@@ -13,7 +13,7 @@
     @apply text-gray-600 block pb-1;
   }
   .input {
-    @apply border border-gray-300 w-full rounded-full py-[3px] outline-none px-4 focus:ring-1 focus:ring-inset focus:ring-blue-200;
+    @apply border border-gray-300 w-full rounded-xl py-[3px] outline-none px-4 focus:ring-1 focus:ring-inset focus:ring-blue-200;
   }
   .parallelogram {
     @apply w-48 h-24 bg-primary;
